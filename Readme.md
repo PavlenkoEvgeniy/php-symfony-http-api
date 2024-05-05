@@ -26,6 +26,12 @@
 
 # Документация:
 
+Необходимые os/утилиты/пакеты:
+1) Linux ubuntu
+2) composer
+3) symfony-cli
+4) docker-compose-v2
+
 Команды:
 1) composer install    // подтягиваем зависимости
 2) sudo make dc_up     // запуск приложения (будет доступно по localhost:888) (phpmyadmin доступно по localhost:8090)
