@@ -10,4 +10,4 @@
 ###< symfony/framework-bundle ###
 
 docker/tmp/
-.idea
+.idea/
