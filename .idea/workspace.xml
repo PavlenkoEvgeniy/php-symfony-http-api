@@ -5,64 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd3ae7ca-11ac-4197-9cff-c18b28717cc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo10_tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo11_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo11_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo12_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo12_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo14_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo14_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo15_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo15_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo16_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo16_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo17_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo17_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo18_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo18_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo19_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo19_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo20_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo20_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo21_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo21_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo22_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo22_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo23_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo23_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo24_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo24_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo25_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo25_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo26_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo26_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo27_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo27_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo28_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo28_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo29_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo29_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo30_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo30_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo31_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo31_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo32_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo32_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo33_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo33_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo34_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo34_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo35_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo35_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo36_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo36_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo37_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo37_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo38_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo38_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo39_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo39_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo40_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo40_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo9" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_redo/#ib_redo9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_1.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_10.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_2.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_3.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_4.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_5.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_6.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_7.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_8.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/auto.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/auto.cnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/binlog.000002" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/binlog.000002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/binlog.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/tmp/db/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/docker/tmp/db/undo_002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +75,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -138,21 +87,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/p3s/WebProjects/php-symfony-http-api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/p3s/WebProjects/php-symfony-http-api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -172,6 +121,7 @@
       <workItem from="1714766354320" duration="2919000" />
       <workItem from="1714770300456" duration="2238000" />
       <workItem from="1714804995219" duration="1163000" />
+      <workItem from="1714930525405" duration="1042000" />
     </task>
     <servers />
   </component>
