@@ -44,4 +44,13 @@ class AuthorController extends AbstractController
             'message' => 'Author created successfully!',
         ]);
     }
+
+    #[Route('/api/author/delete/{id}', name: 'delete_author', methods: ['DELETE'])]
+    public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $author = $doctrine->getRepository(Author::class)->find($id);
+
+        dd($author);
+    }
 }
