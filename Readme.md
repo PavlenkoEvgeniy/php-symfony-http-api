@@ -39,7 +39,7 @@
 6) php bin/console doctrine:migrations:migrate               // применяем миграции
 7) php bin/console doctrine:fixtures:load                    // заполняем таблицы тестовыми данными
 
-##Работа с API:
+## Работа с API:
 1. Получение всех книг (помимо полей книги, возвращать фамилию автора и наименование издательства)
    curl --location --request GET 'localhost:888/api/books'
 
@@ -80,3 +80,10 @@ Remarks: Если в базе данных нет издателя с таким
    curl --location --request DELETE 'localhost:888/api/author/delete/1'
 3) Удаление издателя (Soft Delete)
    curl --location --request DELETE 'localhost:888/api/publisher/delete/1'
+
+## Symfony команды:
+1) Команда по наполнению БД тестовыми данными (несколько авторов/книг/издательств)
+   php bin/console doctrine:fixtures:load
+
+2) Команда по удалению всех авторов, у которых нет книг
+*** Не смог реализовать консольную команду без нативных запросов SQL запросов к базе данных. Не смог прокинуть ManagerRegistry объектов в новую консольную команду. Нужна помощь старших коллег 
