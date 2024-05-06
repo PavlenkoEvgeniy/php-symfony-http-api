@@ -31,9 +31,19 @@ class Book
     #[ORM\ManyToMany(targetEntity: Author::class, mappedBy: "books", cascade: ["persist"])]
     private Collection $authors;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updated_at = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $deleted_at = null;
+
     public function __construct()
     {
         $this->authors = new ArrayCollection();
+        $this->created_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -100,6 +110,42 @@ class Book
         if ($this->authors->removeElement($author)) {
             $author->removeBook($this);
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(?\DateTimeImmutable $created_at): static
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updated_at): static
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getDeletedAt(): ?\DateTimeImmutable
+    {
+        return $this->deleted_at;
+    }
+
+    public function setDeletedAt(?\DateTimeImmutable $deleted_at): static
+    {
+        $this->deleted_at = $deleted_at;
 
         return $this;
     }

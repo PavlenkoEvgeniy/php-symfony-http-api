@@ -31,9 +31,19 @@ class Author
     #[ORM\InverseJoinColumn(name: "book_id", referencedColumnName: "id")]
     private Collection $books;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updated_at = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $deleted_at = null;
+
     public function __construct()
     {
         $this->books = new ArrayCollection();
+        $this->created_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -85,6 +95,42 @@ class Author
     public function removeBook(Book $book): static
     {
         $this->books->removeElement($book);
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(?\DateTimeImmutable $created_at): static
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updated_at): static
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getDeletedAt(): ?\DateTimeImmutable
+    {
+        return $this->deleted_at;
+    }
+
+    public function setDeletedAt(?\DateTimeImmutable $deleted_at): static
+    {
+        $this->deleted_at = $deleted_at;
 
         return $this;
     }
