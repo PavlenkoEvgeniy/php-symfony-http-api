@@ -11,6 +11,41 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AuthorController extends AbstractController
 {
+    #[Route('/api/authors', name: 'show_all_authors', methods: ['GET'])]
+    public function index(ManagerRegistry $doctrine): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $authors = $entityManager->getRepository(Author::class)->findAll();
+
+        $data = [];
+
+        foreach ($authors as $author) {
+            if ($author->getDeletedAt() === null) {
+                $books = $author->getBooks();
+                $books_data = [];
+                foreach ($books as $book) {
+                    if ($book->getDeletedAt() === null) {
+                        $books_data[] = [
+                            'id' => $book->getId(),
+                            'title' => $book->getTitle(),
+                            'publisher' => $book->getPublisher()->getPublisherName(),
+                            'publish_year' => $book->getPublishYear(),
+                        ];
+                    }
+                }
+
+                $data[] = [
+                    'id' => $author->getId(),
+                    'family_name' => $author->getFamilyName(),
+                    'first_name' => $author->getFirstName(),
+                    'books' => $books_data,
+                ];
+            }
+        }
+
+        return $this->json($data);
+    }
+
     /**
      * @throws \Exception
      */
@@ -67,5 +102,5 @@ class AuthorController extends AbstractController
             'message' => 'Автор успешно удален!',
         ]);
     }
-    
+
 }
