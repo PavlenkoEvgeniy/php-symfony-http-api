@@ -2,11 +2,6 @@
 
 namespace App\Console;
 
-use App\Entity\Book;
-use App\Repository\BookRepository;
-use Doctrine\Bundle\DoctrineBundle\Orm\ManagerRegistryAwareEntityManagerProvider;
-use Doctrine\DBAL\DriverManager;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
