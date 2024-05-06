@@ -24,6 +24,12 @@ doctrine:
                 alias: App
         controller_resolver:
             auto_mapping: true
+        entity_managers:
+            default:
+                filters:
+                    softdeleteable:
+                        class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                        enabled: true
 
 when@test:
     doctrine:
