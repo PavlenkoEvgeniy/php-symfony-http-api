@@ -58,7 +58,7 @@ class BookController extends AbstractController
 
         // check if book exists in database
         if ($book !== null) {
-            throw new \ErrorException("Книга с названием \"{$request->request->get('title')}\" уже есть в базе данных!", 500);
+            throw new \ErrorException("Book with this name is already exists in database!", 500);
         }
 
 
@@ -68,13 +68,13 @@ class BookController extends AbstractController
         $publisher = $doctrine->getRepository(Publisher::class)->find(['id' => $request->request->get('publisher_id')]);
 
         if ($publisher == null) {
-            throw new \ErrorException("Издателя с id {$request->request->get('publisher_id')} нет в базе данных");
+            throw new \ErrorException("Publisher with id {$request->request->get('publisher_id')} was not found in database", 500);
         }
 
         $author = $doctrine->getRepository(Author::class)->find(['id' => $request->request->get('author_id')]);
 
         if ($author == null) {
-            throw new \ErrorException("Издателя с id {$request->request->get('author_id')} нет в базе данных");
+            throw new \ErrorException("Author with id {$request->request->get('author_id')} was not found in database", 500);
         }
 
         $book->setPublisher($request->request->get('publisher'));
@@ -86,7 +86,7 @@ class BookController extends AbstractController
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Книга успешно создана!',
+            'message' => 'Book created successfully!',
         ]);
     }
 
@@ -100,7 +100,7 @@ class BookController extends AbstractController
         $book = $doctrine->getRepository(Book::class)->find($id);
 
         if (!$book) {
-            throw new \Exception("Книга с id {$id} не найден!");
+            throw new \Exception("Book with id {$id} was not found!", 500);
         }
 
         $book->setDeletedAt(new \DateTime('now'));
@@ -109,7 +109,7 @@ class BookController extends AbstractController
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Книга успешно удалена!',
+            'message' => 'Book deleted successfully! (Soft Delete)',
         ]);
     }
 }

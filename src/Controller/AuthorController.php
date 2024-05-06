@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Author;
+use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -56,7 +57,7 @@ class AuthorController extends AbstractController
 
         $author = $doctrine->getRepository(Author::class)->findOneBy(['family_name' => $request->request->get('family_name')]);
 
-        // check if author exists in database
+        // check if author is already exists in database with the same family name and fist name
         if ($author !== null) {
 
             $family_name = $author->getFamilyName();
@@ -64,7 +65,7 @@ class AuthorController extends AbstractController
 
             //check if family_name and fist_name are equal to record in database
             if ($family_name == $request->request->get('family_name') && $fist_name == $request->request->get('first_name')) {
-                throw new \ErrorException('Этот автор уже есть в базе данных!', 500);
+                throw new \ErrorException('Author with this names are already exists in database!', 500);
             }
         }
 
@@ -90,7 +91,7 @@ class AuthorController extends AbstractController
         $author = $doctrine->getRepository(Author::class)->find($id);
 
         if (!$author) {
-            throw new \Exception("Автор с id {$id} не найден!");
+            throw new \Exception("Author with id {$id} not found in database!");
         }
 
         $author->setDeletedAt(new \DateTime('now'));
@@ -99,8 +100,36 @@ class AuthorController extends AbstractController
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Автор успешно удален!',
+            'message' => 'Author deleted successfully!',
         ]);
     }
 
+    #[Route('/api/authors/delete-without-books', name: 'delete_authors_without_book', methods: ['DELETE'])]
+    public function deleteWithoutBooks(ManagerRegistry $doctrine): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $authors = $entityManager->getRepository(Author::class)->findAll();
+
+        foreach ($authors as $author) {
+            $books = $author->getBooks();
+
+            $books_data = [];
+            foreach ($books as $book) {
+                $books_data[] = [
+                    $book->getTitle(),
+                ];
+            }
+
+            if ($books_data === []) {
+                $author->setDeletedAt(new \DateTime('now'));
+                $entityManager->persist($author);
+            }
+
+        }
+        $entityManager->flush();
+
+        return $this->json([
+            'message' => 'Authors without books were deleted successfully! (Soft Delete)',
+        ]);
+    }
 }

@@ -42,7 +42,7 @@ class PublisherController extends AbstractController
         $publisher = $doctrine->getRepository(Publisher::class)->find($id);
 
         if (!$publisher) {
-            throw new \Exception("Издатель с id {$id} не найден!");
+            throw new \Exception("Publisher with id {$id} was not found!", 500);
         }
 
         $publisher_books = $publisher->getBooks();
@@ -64,7 +64,7 @@ class PublisherController extends AbstractController
             $book = $doctrine->getRepository(Book::class)->find($books_id);
 
             if ($book === null) {
-                throw new \Exception("Книги с id {$books_id} нет в базе данных");
+                throw new \Exception("Book with id {$books_id} was not found in database");
             }
 
             $publisher->addBook($book);
@@ -86,7 +86,7 @@ class PublisherController extends AbstractController
 
 
         return $this->json([
-            'message' => "Издатель {$publisher->getPublisherName()} изменен успешно! Изменения сохранены в базу данных",
+            'message' => "Publisher {$publisher->getPublisherName()} was updated successfully! Changes were saved to database",
         ]);
     }
 
@@ -97,7 +97,7 @@ class PublisherController extends AbstractController
         $publisher = $doctrine->getRepository(Publisher::class)->find($id);
 
         if (!$publisher) {
-            throw new \Exception("Издатель с id {$id} не найден!");
+            throw new \Exception("Publisher with id {$id} was not found", 500);
         }
 
         $publisher->setDeletedAt(new \DateTime('now'));
@@ -106,7 +106,7 @@ class PublisherController extends AbstractController
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Издатель успешно удален!',
+            'message' => 'Publisher was deleted successfully! (Soft Delete)',
         ]);
     }
 }

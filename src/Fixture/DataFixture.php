@@ -27,7 +27,7 @@ class DataFixture extends Fixture
         $publishers = $manager->getRepository(Publisher::class)->findAll();
         $publishers_qty = count($publishers);
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $book = new Book();
             $book->setTitle('Book ' . $i);
             $book->setPublishYear(rand(2000, 2024));
