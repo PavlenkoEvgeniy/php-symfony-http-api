@@ -45,12 +45,26 @@ class AuthorController extends AbstractController
         ]);
     }
 
+    /**
+     * @throws \Exception
+     */
     #[Route('/api/author/delete/{id}', name: 'delete_author', methods: ['DELETE'])]
     public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
     {
         $entityManager = $doctrine->getManager();
         $author = $doctrine->getRepository(Author::class)->find($id);
 
-        dd($author);
+        if (!$author) {
+            throw new \Exception("Автор с id {$id} не найден!");
+        }
+
+        $author->setDeletedAt(new \DateTime('now'));
+
+        $entityManager->persist($author);
+        $entityManager->flush();
+
+        return $this->json([
+            'message' => 'Автор успешно удален!',
+        ]);
     }
 }

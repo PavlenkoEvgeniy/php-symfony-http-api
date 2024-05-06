@@ -85,7 +85,30 @@ class BookController extends AbstractController
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Book created successfully!',
+            'message' => 'Книга успешно создана!',
+        ]);
+    }
+
+    /**
+     * @throws \Exception
+     */
+    #[Route('/api/book/delete/{id}', name: 'delete_book', methods: ['DELETE'])]
+    public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $book = $doctrine->getRepository(Book::class)->find($id);
+
+        if (!$book) {
+            throw new \Exception("Книга с id {$id} не найден!");
+        }
+
+        $book->setDeletedAt(new \DateTime('now'));
+
+        $entityManager->persist($book);
+        $entityManager->flush();
+
+        return $this->json([
+            'message' => 'Книга успешно удалена!',
         ]);
     }
 }

@@ -12,6 +12,26 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class PublisherController extends AbstractController
 {
+    #[Route('/api/publishers', name: 'show_all_publishers', methods: ['GET'])]
+    public function index(ManagerRegistry $doctrine): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $filters = $entityManager->getFilters();
+        dd($filters);
+        $publishers = $doctrine->getRepository(Publisher::class)->findAll();
+
+        $data = [];
+
+        foreach ($publishers as $publisher) {
+            $data[] = [
+                'id' => $publisher->getId(),
+                'publisher_name' => $publisher->getPublisherName(),
+            ];
+        }
+
+        return $this->json($data);
+    }
+
     /**
      * @throws \Exception
      */
@@ -60,7 +80,7 @@ class PublisherController extends AbstractController
             $publisher->setPublisherAddress($request->request->get('publisher_address'));
         }
 
-        $publisher->setUpdatedAt(new \DateTimeImmutable('now'));
+        $publisher->setUpdatedAt(new \DateTime('now'));
 
         $entityManager->persist($publisher);
         $entityManager->flush();
@@ -68,6 +88,26 @@ class PublisherController extends AbstractController
 
         return $this->json([
             'message' => "Издатель {$publisher->getPublisherName()} изменен успешно! Изменения сохранены в базу данных",
+        ]);
+    }
+
+    #[Route('/api/publisher/delete/{id}', name: 'delete_publisher', methods: ['DELETE'])]
+    public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $publisher = $doctrine->getRepository(Publisher::class)->find($id);
+
+        if (!$publisher) {
+            throw new \Exception("Издатель с id {$id} не найден!");
+        }
+
+        $publisher->setDeletedAt(new \DateTime('now'));
+
+        $entityManager->persist($publisher);
+        $entityManager->flush();
+
+        return $this->json([
+            'message' => 'Издатель успешно удален!',
         ]);
     }
 }
