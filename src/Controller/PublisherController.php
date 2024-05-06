@@ -59,6 +59,9 @@ class PublisherController extends AbstractController
         if ($request->request->get('publisher_address')) {
             $publisher->setPublisherAddress($request->request->get('publisher_address'));
         }
+
+        $publisher->setUpdatedAt(new \DateTimeImmutable('now'));
+
         $entityManager->persist($publisher);
         $entityManager->flush();
 
