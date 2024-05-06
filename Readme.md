@@ -4,20 +4,28 @@
 1) docker-compose-v2
 
 ## Запуск приложения:
-1) sudo make dc_up     // запуск приложения (будет доступно по localhost:888) (phpmyadmin доступно по localhost:8090 - заходим с логином root и паролем root)
+1) sudo make dc_up  
+// запуск приложения (будет доступно по localhost:888) (phpmyadmin доступно по localhost:8090 - заходим с логином root и паролем root)
 
-2) sudo make dc_down   // завершение работы приложения
+3) sudo make dc_down  
+// завершение работы приложения
 
-3) sudo make app_bash  // запуск bash докер контейнера
+5) sudo make app_bash  
+// запуск bash докер контейнера
 
-*** дальнейшие действия совершаются в bash докер контейнера
-4) composer install
+*** дальнейшие действия совершаются в bash докер контейнера ***  
+  
+4. composer install  
+// устанавливаем зависимости 
 
-5) php bin/console doctrine:database:create                  // создаем базу
+5) php bin/console doctrine:database:create  
+// создаем базу
 
-6) php bin/console doctrine:migrations:migrate               // применяем миграции
+7) php bin/console doctrine:migrations:migrate  
+// применяем миграции
 
-7) php bin/console doctrine:fixtures:load                    // заполняем таблицы тестовыми данными
+9) php bin/console doctrine:fixtures:load  
+// заполняем таблицы тестовыми данными
 
 ## Работа с API:
 1. Получение всех книг (помимо полей книги, возвращать фамилию автора и наименование издательства)  
@@ -54,16 +62,16 @@ Remarks: Если в базе данных нет издателя с таким
 
 5. Удаление книги/автора/издателя  
 
-1) Удаление книги (Soft Delete)  
+5.1. Удаление книги (Soft Delete)  
    curl --location --request DELETE 'localhost:888/api/book/delete/2'
-2) Удаление автора (Soft Delete)  
+5.2. Удаление автора (Soft Delete)  
    curl --location --request DELETE 'localhost:888/api/author/delete/1'
-3) Удаление издателя (Soft Delete)  
+5.3. Удаление издателя (Soft Delete)  
    curl --location --request DELETE 'localhost:888/api/publisher/delete/1'
 
 ## Symfony команды:
-1) Команда по наполнению БД тестовыми данными (несколько авторов/книг/издательств)  
+1. Команда по наполнению БД тестовыми данными (несколько авторов/книг/издательств)  
    php bin/console doctrine:fixtures:load
 
-2) Команда по удалению всех авторов, у которых нет книг  
+2. Команда по удалению всех авторов, у которых нет книг  
 *** Не смог реализовать консольную команду без нативных запросов SQL запросов к базе данных. Не смог прокинуть ManagerRegistry объектов в новую консольную команду. Нужна помощь старших коллег 
