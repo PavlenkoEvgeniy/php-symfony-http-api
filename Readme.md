@@ -2,6 +2,7 @@
 
 ## Необходимые os/утилиты/пакеты:
 1) docker-compose-v2
+2) make
 
 ## Запуск приложения:
 1) sudo make dc_up  
