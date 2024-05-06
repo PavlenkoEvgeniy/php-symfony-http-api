@@ -15,18 +15,17 @@ class PublisherController extends AbstractController
     #[Route('/api/publishers', name: 'show_all_publishers', methods: ['GET'])]
     public function index(ManagerRegistry $doctrine): JsonResponse
     {
-        $entityManager = $doctrine->getManager();
-        $filters = $entityManager->getFilters();
-        dd($filters);
         $publishers = $doctrine->getRepository(Publisher::class)->findAll();
 
         $data = [];
 
         foreach ($publishers as $publisher) {
-            $data[] = [
-                'id' => $publisher->getId(),
-                'publisher_name' => $publisher->getPublisherName(),
-            ];
+            if ($publisher->getDeletedAt() === null) {
+                $data[] = [
+                    'id' => $publisher->getId(),
+                    'publisher_name' => $publisher->getPublisherName(),
+                ];
+            }
         }
 
         return $this->json($data);

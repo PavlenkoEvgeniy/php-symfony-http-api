@@ -21,25 +21,26 @@ class BookController extends AbstractController
 
         $data = [];
 
-
         foreach ($books as $book) {
-            $authors = $book->getAuthors();
-            $authors_data = [];
-            foreach ($authors as $author) {
-                $authors_data[] = [
-                    'id' => $author->getId(),
-                    'family_name' => $author->getFamilyName(),
-                    'first_name' => $author->getFirstName(),
+            if ($book->getDeletedAt() === null) {
+                $authors = $book->getAuthors();
+                $authors_data = [];
+                foreach ($authors as $author) {
+                    $authors_data[] = [
+                        'id' => $author->getId(),
+                        'family_name' => $author->getFamilyName(),
+                        'first_name' => $author->getFirstName(),
+                    ];
+                }
+
+                $data[] = [
+                    'id' => $book->getId(),
+                    'title' => $book->getTitle(),
+                    'authors' => $authors_data,
+                    'publisher' => $book->getPublisher()->getPublisherName(),
+                    'publish_year' => $book->getPublishYear(),
                 ];
             }
-
-            $data[] = [
-                'id' => $book->getId(),
-                'title' => $book->getTitle(),
-                'authors' => $authors_data,
-                'publisher' => $book->getPublisher()->getPublisherName(),
-                'publish_year' => $book->getPublishYear(),
-            ];
         }
 
         return $this->json($data);

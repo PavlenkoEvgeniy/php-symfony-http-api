@@ -67,4 +67,5 @@ class AuthorController extends AbstractController
             'message' => 'Автор успешно удален!',
         ]);
     }
+    
 }
