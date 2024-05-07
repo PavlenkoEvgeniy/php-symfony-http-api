@@ -1,23 +1,24 @@
 # Документация:
 
 ## Необходимые os/утилиты/пакеты:
-1. docker-compose-v2
-2. make (опционально, для удобства я вынес команды на сборку, запуск, остановку контейнеров и для доступа к bash)
+1. Linux Ubuntu 22.04 LTS (тестировал на ней)
+2. docker-compose-v2
+3. make (опционально, для удобства я вынес команды на сборку, запуск, остановку контейнеров и для доступа к bash - см. Makefile в проекте)
 
 ## Запуск приложения:
-1. docker compose -f ./docker/docker-compose.yml build  
+1. sudo docker compose -f ./docker/docker-compose.yml build  
 // собираем контейнеры
 
-2. docker compose -f ./docker/docker-compose.yml start  
+2. sudo docker compose -f ./docker/docker-compose.yml start  
 // запуск приложения (будет доступно по localhost:888) (phpmyadmin доступно по localhost:8090 - заходим с логином root и паролем root)
 
-(3. docker compose -f ./docker/docker-compose.yml stop  
+(3. sudo docker compose -f ./docker/docker-compose.yml stop  
 // завершение работы приложения)
 
 4. sudo docker exec -it --user=root php-fpm chmod -R 755 /var/www/  
 // расширяем права доступа для пользователей и группы
 
-5. docker compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bash  
+5. sudo docker compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bash  
 // заходим в bash докер контейнера с проектом
 
 *** дальнейшие действия совершаются в bash докер контейнера ***  (см. пункт 5)  
