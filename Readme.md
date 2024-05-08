@@ -16,7 +16,7 @@
 // завершение работы приложения)
 
 4. sudo docker exec -it --user=root php-fpm chmod -R 755 /var/www/  
-// расширяем права доступа для пользователей и группы
+// расширяем права доступа к файлам для пользователей и группы
 
 5. sudo docker compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bash  
 // заходим в bash докер контейнера с проектом
