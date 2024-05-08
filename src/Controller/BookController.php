@@ -47,7 +47,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * @throws \ErrorException
+     * @throws \Exception
      */
     #[Route('/api/book/create', name: 'create_book', methods: ['POST'])]
     public function create(ManagerRegistry $doctrine, Request $request): JsonResponse
@@ -58,7 +58,7 @@ class BookController extends AbstractController
 
         // check if book exists in database
         if ($book !== null) {
-            throw new \ErrorException("Book with this name is already exists in database!", 500);
+            throw new \Exception("Book with this name is already exists in database!", 500);
         }
 
 
@@ -68,13 +68,13 @@ class BookController extends AbstractController
         $publisher = $doctrine->getRepository(Publisher::class)->find(['id' => $request->request->get('publisher_id')]);
 
         if ($publisher == null) {
-            throw new \ErrorException("Publisher with id {$request->request->get('publisher_id')} was not found in database", 500);
+            throw new \Exception("Publisher with id {$request->request->get('publisher_id')} was not found in database", 500);
         }
 
         $author = $doctrine->getRepository(Author::class)->find(['id' => $request->request->get('author_id')]);
 
         if ($author == null) {
-            throw new \ErrorException("Author with id {$request->request->get('author_id')} was not found in database", 500);
+            throw new \Exception("Author with id {$request->request->get('author_id')} was not found in database", 500);
         }
 
         $book->setPublisher($request->request->get('publisher'));
@@ -101,6 +101,10 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw new \Exception("Book with id {$id} was not found!", 500);
+        }
+        
+        if ($book->getDeletedAt() !== null) {
+            throw new \Exception("Book with id {$id} is already deleted!", 500);
         }
 
         $book->setDeletedAt(new \DateTime('now'));
