@@ -100,6 +100,10 @@ class PublisherController extends AbstractController
             throw new \Exception("Publisher with id {$id} was not found", 500);
         }
 
+        if ($publisher->getDeletedAt() !== null) {
+            throw new \Exception("Publisher with id {$publisher->getId()} is already deleted!", 500);
+        }
+
         $publisher->setDeletedAt(new \DateTime('now'));
 
         $entityManager->persist($publisher);
