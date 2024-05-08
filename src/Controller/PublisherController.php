@@ -86,7 +86,7 @@ class PublisherController extends AbstractController
 
 
         return $this->json([
-            'message' => "Publisher {$publisher->getPublisherName()} was updated successfully! Changes were saved to database",
+            'message' => "Publisher was updated successfully!",
         ]);
     }
 
