@@ -42,7 +42,7 @@ class DataFixture extends Fixture
         $books = $manager->getRepository(Book::class)->findAll();
         $books_qty = count($books);
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $author = new Author();
             $author->setFamilyName('Family name ' . $i);
             $author->setFirstName('First name ' . $i);
