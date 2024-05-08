@@ -65,6 +65,8 @@ Remarks: Если в базе данных нет издателя с таким
    curl --location --request DELETE 'localhost:888/api/author/delete/1'  
 5.3. Удаление издателя (Soft Delete)  
    curl --location --request DELETE 'localhost:888/api/publisher/delete/1'
+5.3. Удаление всех авторов, у которых нет книг (Soft Delete)  
+curl --location --request DELETE 'localhost:888/api/authors/delete-without-books'
 
 ## Symfony команды:
 1. Команда по наполнению БД тестовыми данными (несколько авторов/книг/издательств)  
