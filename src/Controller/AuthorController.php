@@ -65,7 +65,7 @@ class AuthorController extends AbstractController
 
             //check if family_name and fist_name are equal to record in database
             if ($family_name == $request->request->get('family_name') && $fist_name == $request->request->get('first_name')) {
-                throw new \ErrorException('Author with this names are already exists in database!', 500);
+                throw new \Exception('Author with this names are already exists in database!', 500);
             }
         }
 
