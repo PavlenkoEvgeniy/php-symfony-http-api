@@ -91,7 +91,11 @@ class AuthorController extends AbstractController
         $author = $doctrine->getRepository(Author::class)->find($id);
 
         if (!$author) {
-            throw new \Exception("Author with id {$id} not found in database!");
+            throw new \Exception("Author with id {$id} not found in database!", 500);
+        }
+
+        if ($author->getDeletedAt() !== null) {
+            throw new \Exception('Author with id ' . $author->getId() . ' is already deleted!', 500);
         }
 
         $author->setDeletedAt(new \DateTime('now'));
