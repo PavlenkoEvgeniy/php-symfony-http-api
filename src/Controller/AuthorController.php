@@ -84,7 +84,7 @@ class AuthorController extends AbstractController
     /**
      * @throws \Exception
      */
-    #[Route('/api/author/delete/{id}', name: 'delete_author', methods: ['DELETE'])]
+    #[Route('/api/author/delete/{id}', name: 'delete_author', requirements: ['id' => '\d+'], methods: ['DELETE'])]
     public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
     {
         $entityManager = $doctrine->getManager();

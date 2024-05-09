@@ -93,7 +93,7 @@ class BookController extends AbstractController
     /**
      * @throws \Exception
      */
-    #[Route('/api/book/delete/{id}', name: 'delete_book', methods: ['DELETE'])]
+    #[Route('/api/book/delete/{id}', name: 'delete_book', requirements: ['id' => '\d+'], methods: ['DELETE'])]
     public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
     {
         $entityManager = $doctrine->getManager();

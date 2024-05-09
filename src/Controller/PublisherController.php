@@ -34,7 +34,7 @@ class PublisherController extends AbstractController
     /**
      * @throws \Exception
      */
-    #[Route('/api/publisher/update/{id}', name: 'update_publisher', methods: ['PUT'])]
+    #[Route('/api/publisher/update/{id}', name: 'update_publisher', requirements: ['id' => '\d+'], methods: ['PUT'])]
     public function update(ManagerRegistry $doctrine, Request $request, int $id): JsonResponse
     {
         $entityManager = $doctrine->getManager();
@@ -90,7 +90,7 @@ class PublisherController extends AbstractController
         ]);
     }
 
-    #[Route('/api/publisher/delete/{id}', name: 'delete_publisher', methods: ['DELETE'])]
+    #[Route('/api/publisher/delete/{id}', name: 'delete_publisher', requirements: ['id' => '\d+'], methods: ['DELETE'])]
     public function delete(ManagerRegistry $doctrine, int $id): JsonResponse
     {
         $entityManager = $doctrine->getManager();
