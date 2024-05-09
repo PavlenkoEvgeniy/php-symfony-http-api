@@ -75,4 +75,4 @@ curl --location --request DELETE 'localhost:888/api/authors/delete-without-books
 2. Команда по удалению всех авторов, у которых нет книг  
 *** Не смог реализовать консольную команду без нативных запросов SQL запросов к базе данных. Не смог прокинуть ManagerRegistry объектов в новую консольную команду. Нужна помощь старших коллег.  
    Реализовал как http api:  
-   curl --location --request DELETE 'localhost:888/api/authors/delete-without-books' 
+   curl --location --request DELETE 'localhost:888/api/authors/delete-without-books'
