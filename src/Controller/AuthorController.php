@@ -106,33 +106,4 @@ class AuthorController extends AbstractController
             'message' => 'Author deleted successfully!',
         ]);
     }
-
-    #[Route('/api/authors/delete-without-books', name: 'delete_authors_without_book', methods: ['DELETE'])]
-    public function deleteWithoutBooks(ManagerRegistry $doctrine): JsonResponse
-    {
-        $entityManager = $doctrine->getManager();
-        $authors = $entityManager->getRepository(Author::class)->findAll();
-
-        foreach ($authors as $author) {
-            $books = $author->getBooks();
-
-            $books_data = [];
-            foreach ($books as $book) {
-                $books_data[] = [
-                    $book->getTitle(),
-                ];
-            }
-
-            if ($books_data === []) {
-                $author->setDeletedAt(new \DateTime('now'));
-                $entityManager->persist($author);
-            }
-
-        }
-        $entityManager->flush();
-
-        return $this->json([
-            'message' => 'Authors without books were deleted successfully! (Soft Delete)',
-        ]);
-    }
 }
