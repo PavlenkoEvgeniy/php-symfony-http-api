@@ -52,6 +52,10 @@ class AuthorController extends AbstractController
     #[Route('/api/author/create', name: 'create_author', methods: ['POST'])]
     public function create(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
+        if (!$request->request->has('family_name') || !$request->request->has('first_name')) {
+            throw new \Exception('Missing parameters "family_name" or "first_name" in "create_author" request.', 500);
+        }
+
         $entityManager = $doctrine->getManager();
 
         $author = $doctrine->getRepository(Author::class)->findOneBy(['family_name' => $request->request->get('family_name')]);

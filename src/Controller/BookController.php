@@ -52,6 +52,10 @@ class BookController extends AbstractController
     #[Route('/api/book/create', name: 'create_book', methods: ['POST'])]
     public function create(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
+        if (!$request->request->has('title')) {
+            throw new \Exception('Missing parameter "title" in "create_book" request.', 500);
+        }
+
         $entityManager = $doctrine->getManager();
 
         $book = $doctrine->getRepository(Book::class)->findOneBy(['title' => $request->request->get('title')]);
