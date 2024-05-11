@@ -48,14 +48,14 @@ Remarks: Если в базе данных уже есть автор с так�
    curl --location --request POST 'localhost:888/api/book/create' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'title=Some book 2' --data-urlencode 'publish_year=2024' --data-urlencode 'publisher_id=1' --data-urlencode 'author_id=1'
 
 Remarks: Если в базе данных уже есть книга с такими названием, то вылетит иключение: "Book with this name is already exists in database!".  
-         Если в базе данных нет издателя с таким id, то вылетит иключение: "Publisher with id {$request->request->get('publisher_id')} was not found in database".  
-         Если в базе данных нет автора с таким id, то вылетит иключение: "Author with id {$request->request->get('author_id')} was not found in database".
+         Если в базе данных нет издателя с таким id, то вылетит иключение: "Publisher with id was not found in database".  
+         Если в базе данных нет автора с таким id, то вылетит иключение: "Author with id was not found in database".
 
 4. Редактирование издателя  
    curl --location --request PUT 'localhost:888/api/publisher/update/1' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'books_ids=2,4,6' --data-urlencode 'publisher_name=New name'
 
-Remarks: Если в базе данных нет издателя с таким id, то вылетит иключение: "Publisher with id {$request->request->get('publisher_id')} was not found in database".  
-         Если в базе данных нет книги с таким id, то вылетит иключение: "Book with id {$books_id} was not found in database".
+Remarks: Если в базе данных нет издателя с таким id, то вылетит иключение: "Publisher with id was not found in database".  
+         Если в базе данных нет книги с таким id, то вылетит иключение: "Book with id was not found in database".
 
 5. Удаление книги/автора/издателя  
 
